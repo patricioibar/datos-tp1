@@ -61,3 +61,71 @@ quantity_of_orders_with_discounts_by_state.rename(
         }, inplace=True
     )
 \end{lstlisting}
+
+\subsubsection{Consulta 2}
+
+\textbf{Códigos postales con 5 órdenes `Refunded'}
+
+\label{anexo:output_codigos_postales_refunded}
+\begin{lstlisting}[language=Python, xleftmargin=35pt, xrightmargin=35pt]
+print("\nCodigos postales con 5 ordenes 'Refunded':")
+print(amount_refunded_orders_by_zipcode.loc[amount_refunded_orders_by_zipcode["count"] == 5])
+\end{lstlisting}
+\begin{lstlisting}[style=console, aboveskip=0pt, xleftmargin=145pt, xrightmargin=145pt]
+Codigos postales con 5 ordenes 'Refunded':
+   zip_code  count
+1     65247      5
+2     38151      5
+3      9045      5
+4     14396      5
+5     73291      5
+6     91623      5
+\end{lstlisting}
+
+\textbf{Otros nombres que aparecen en órdenes `Refunded'}
+
+\label{anexo:nombres_mas_comunes}
+\begin{lstlisting}[language=Python, xleftmargin=105pt, xrightmargin=105pt]
+print("\nOtros nombres que aparecen una sola vez:")
+print(most_common_names.loc[most_common_names == 1].head(7))
+\end{lstlisting}
+\begin{lstlisting}[style=console, aboveskip=0pt, xleftmargin=145pt, xrightmargin=145pt]
+Otros nombres que aparecen una sola vez:
+first_name
+ROBERT     1
+CYNTHIA    1
+JAY        1
+MARIA      1
+KAREN      1
+CARLA      1
+WILLIAM    1
+\end{lstlisting}
+
+\subsubsection{Consulta 3}
+\textbf{Gráficos Heatmap resultantes}
+\label{anexo:consulta3_heatmap}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{imagenes/consulta3_heatmap1.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{imagenes/consulta3_heatmap2.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{imagenes/consulta3_heatmap3.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{imagenes/consulta3_heatmap4.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{imagenes/consulta3_heatmap5.png}
+\end{figure}
