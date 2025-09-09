@@ -1,3 +1,12 @@
+Todas las consultas siguen un flujo de trabajo similar:
+\begin{enumerate}
+    \item Limpieza y preprocesamiento de los datos. Esto es selección de columnas necesarias, manejo de valores nulos, creación de nuevas columnas si es necesario, etc.
+    \item Filtrado de los datos según las condiciones de la consulta.
+    \item Realización de merges, groupby y operaciones entre columnas necesarias.
+    \item Visualización y análisis de los resultados obtenidos.
+\end{enumerate}
+Esta forma de proceder, primero seleccionar columnas y filtrar filas, y luego realizar operaciones, es importante para optimizar el rendimiento de las consultas, ya que de esta manera se reduce la cantidad de datos que se deben procesar en los pasos posteriores.
+
 \subsection{Consultas Propuestas por el Enunciado}
 
 A continuación se presentan las consultas propuestas por el enunciado, junto con las consideraciones tomadas para su resolución y los resultados obtenidos. El código fuente y los resultados completos pueden encontrarse en el notebook \href{https://github.com/patricioibar/datos-tp1/blob/main/consultas_enunciado.ipynb}{\texttt{consultas\_enunciado.ipynb}}.
