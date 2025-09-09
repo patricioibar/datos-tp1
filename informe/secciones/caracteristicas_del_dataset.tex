@@ -87,6 +87,19 @@ En la figura \ref{fig:ordenes_por_estado_en_el_tiempo} se puede observar la prop
 
 La única anomalía en la tendencia que siguen los datos es en el último mes registrado. Esto puede deberse a que los datos fueron generados hasta una fecha específica (17/07/2025) y no se completó el mes, por lo que la cantidad de órdenes en ese mes es considerablemente menor.
 
+\paragraph{Sobre order\_items:}
+La tabla llamada \texttt{order\_items} contiene la columna \texttt{order\_id}, que se puede asumir que es una clave foránea que referencia a la tabla \texttt{orders}. Sin embargo, al analizar los datos se puede observar que los valores que se adoptan de \texttt{order\_id} en estas tablas pertenecen a conjuntos disjuntos. Es decir, no hay ningún valor de \texttt{order\_id} que aparezca en ambas tablas. Esto es un error en la integridad referencial de la base de datos, y es otro indicio de que los datos son simulados y no representan una base de datos realista.
+
+\begin{lstlisting}[language=Python, xleftmargin=10pt, xrightmargin=10pt]
+print(f"Los order_id en orders van desde {orders['order_id'].min()} hasta {orders['order_id'].max()}")
+print(f"Los order_id en order_items van desde {items['order_id'].min()} hasta {items['order_id'].max()}")
+\end{lstlisting}
+\vspace{-10pt}
+\begin{lstlisting}[style=console, xleftmargin=100pt, xrightmargin=100pt]
+Los order_id en orders van desde 1 hasta 4700000
+Los order_id en order_items van desde 19900399 hasta 20000000
+\end{lstlisting}
+
 \subsection{Inventario}
 
 En la figura \ref{fig:movimientos_por_tipo_y_dia} se puede observar la cantidad de movimientos de inventario por tipo y día. Se puede observar que a lo largo del tiempo se registran cantidades de movimientos similares para cada tipo de movimiento. La única excepción es el tipo de movimiento `Undefined', que tiene una cantidad considerablemente menor de movimientos registrados.
