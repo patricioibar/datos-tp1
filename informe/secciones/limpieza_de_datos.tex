@@ -52,6 +52,10 @@ Además, es importante manejar los valores faltantes de una forma acorde al aná
 
 Por ejemplo, tanto en las columnas \texttt{status} como en \texttt{billing\_address}, se decidió dar un valor por defecto a los valores faltantes. Para esto se utilizó la función \texttt{fillna()} de pandas, que permite reemplazar los valores faltantes con un valor específico. En este caso, se decidió reemplazar los valores faltantes con el valor \texttt{"UNDEFINED"}.
 
+En otros casos, por lo menos en este dataset, algunos valores faltantes pueden ser inferidos a partir de valores en otras columnas. Por ejemplo, en la tabla de ítems de orden, las columnas \texttt{quantity}, \texttt{unit\_price} y \texttt{line\_total} están relacionadas por la fórmula:
+\[\texttt{line\_total} = \texttt{quantity} \times \texttt{unit\_price}\] \label{datos:order_items_quantity}
+Si uno de estos valores falta, puede ser calculado a partir de los otros dos.
+
 \subsection{Normalización de Datos}
 
 En muchos casos pueden encontrarse diferentes valores en una misma columna que representan la misma información. Por ejemplo, en la columna \texttt{status} pueden encontrarse los valores \texttt{"delivered"}, \texttt{"DELIVERED"} y \texttt{"Delivered"}, que representan el mismo estado de una orden. Para evitar confusiones y facilitar el análisis, es importante normalizar estos valores a un formato consistente.
