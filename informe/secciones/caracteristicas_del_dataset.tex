@@ -35,7 +35,11 @@ Otra cosa que se puede observar en estos gráficos es que la mayoría de los usu
     \label{fig:proporcion_de_nuevos_usuarios}
 \end{figure}
 
-A continuación se muestran dos gráficos que ilustran la cantidad de usuarios por estado. En la figura \ref{fig:usuarios_por_estado} se puede observar que la mayoría de los estados tienen una cantidad similar de usuarios. En esta primera figura se visualiza una escala de 0 a 7000, y vemos que todos los estados tienen colores muy similares.
+A continuación se muestran dos gráficos que ilustran la cantidad de usuarios por estado. Estos gráficos con mapas los generé utilizando la librería \texttt{geopandas}, y los mapas los descargué del sitio web \href{https://www.naturalearthdata.com/downloads/110m-cultural-vectors/110m-admin-1-states-provinces/}{\underline{\textsf{naturalearthdata}}}
+
+En la figura \ref{fig:usuarios_por_estado} se puede observar que la mayoría de los estados tienen una cantidad similar de usuarios. En esta primera figura se visualiza una escala de 0 a 7000, y vemos que todos los estados tienen colores muy similares.
+
+En la figura \ref{fig:usuarios_por_estado_closer} se puede ver el mismo mapa con una escala más ajustada, aproximadamente de 6300 a 6700. En este gráfico sí se pueden notar colores más variados. Aún así hay que notar que la diferencia entre el estado con más usuarios y el estado con menos usuarios es de a lo sumo 400 usuarios, lo cual es una diferencia bastante baja tomando en consideración el total de usuarios por estado. Esto refuerza la idea de que los datos son simulados y no representan una distribución realista de usuarios por estado. Notar como, por ejemplo, el estado de Alaska  tiene muchos más usuarios que Texas, lo cual es muy improbable en un escenario real.
 
 \begin{figure}[H]
     \centering
@@ -43,8 +47,6 @@ A continuación se muestran dos gráficos que ilustran la cantidad de usuarios p
     \caption{Cantidad de usuarios por estado}
     \label{fig:usuarios_por_estado}
 \end{figure}
-
-En la figura \ref{fig:usuarios_por_estado_closer} se puede ver el mismo mapa con una escala más cerrada, aproximadamente de 6300 a 6700. En este gráfico sí se pueden notar colores más variados. Aún así hay que notar que la diferencia entre el estado con más usuarios y el estado con menos usuarios es de a lo sumo 400 usuarios, lo cual es una diferencia bastante baja tomando en consideración el total de usuarios por estado. Esto refuerza la idea de que los datos son simulados y no representan una distribución realista de usuarios por estado. Notar como, por ejemplo, el estado de Alaska  tiene muchos más usuarios que Texas, lo cual es muy improbable en un escenario real.
 
 \begin{figure}[H]
     \centering
